@@ -18,9 +18,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.arijit.pomodoro.widgets.EinkSwitch
-import com.google.android.material.slider.Slider
-import android.widget.EditText
-import androidx.core.widget.addTextChangedListener
 import android.content.res.Configuration
 import androidx.activity.result.contract.ActivityResultContracts
 import android.app.NotificationChannel
@@ -45,16 +42,21 @@ import android.widget.Toast
 import com.arijit.pomodoro.utils.UltraFocusManager
 
 class SettingsActivity : AppCompatActivity() {
-    private lateinit var focusedTimeTxt: EditText
-    private lateinit var focusedTimeSlider: Slider
-    private lateinit var shortBreakTxt: EditText
-    private lateinit var shortBreakSlider: Slider
-    private lateinit var longBreakTxt: EditText
-    private lateinit var longBreakSlider: Slider
-    private lateinit var sessionsTxt: EditText
-    private lateinit var sessionsSlider: Slider
-    private lateinit var alarmTxt: EditText
-    private lateinit var alarmSlider: Slider
+    private lateinit var focusedTimeValueTxt: TextView
+    private lateinit var focusedTimeMinusBtn: View
+    private lateinit var focusedTimePlusBtn: View
+    private lateinit var shortBreakValueTxt: TextView
+    private lateinit var shortBreakMinusBtn: View
+    private lateinit var shortBreakPlusBtn: View
+    private lateinit var longBreakValueTxt: TextView
+    private lateinit var longBreakMinusBtn: View
+    private lateinit var longBreakPlusBtn: View
+    private lateinit var sessionsValueTxt: TextView
+    private lateinit var sessionsMinusBtn: View
+    private lateinit var sessionsPlusBtn: View
+    private lateinit var alarmValueTxt: TextView
+    private lateinit var alarmMinusBtn: View
+    private lateinit var alarmPlusBtn: View
     private lateinit var autoStartSessions: EinkSwitch
     private lateinit var darkModeToggle: EinkSwitch
     private lateinit var clockSoundToggle: EinkSwitch
@@ -69,10 +71,8 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var madeWithLoveTxt: TextView
     private lateinit var uiSettingsComponents: LinearLayout
     private lateinit var timerSettingsComponents: LinearLayout
-    private lateinit var brownNoiseToggle: EinkSwitch
-    private lateinit var whiteNoiseToggle: EinkSwitch
-    private lateinit var rainfallToggle: EinkSwitch
-    private lateinit var lightJazzToggle: EinkSwitch
+    private lateinit var musicRow: View
+    private lateinit var musicValueTxt: TextView
     private lateinit var keepScreenAwakeToggle: EinkSwitch
     private lateinit var hapticFeedbackToggle: EinkSwitch
     private lateinit var statsCard: CardView
@@ -84,7 +84,20 @@ class SettingsActivity : AppCompatActivity() {
     private var originalDndMode: Int = 0
     private lateinit var notificationManager: NotificationManager
 
-    private var isUpdatingSlider = false
+    private var focusedTimeValue = 25
+    private var shortBreakValue = 5
+    private var longBreakValue = 10
+    private var sessionsValue = 4
+    private var alarmValue = 3
+
+    private val musicOptions: List<Pair<String?, String>> = listOf(
+        null to "Off",
+        "brown_noise" to "Brown Noise",
+        "white_noise" to "White Noise",
+        "rainfall" to "Rainfall",
+        "light_jazz" to "Light Jazz",
+    )
+    private var selectedMusic: String? = null
 
     private val storagePermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -118,10 +131,10 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        
+
         // Initialize sharedPreferences first
         sharedPreferences = getSharedPreferences("PomodoroSettings", Context.MODE_PRIVATE)
-        
+
         // Lock to portrait unless ultra focus mode is enabled
         if (sharedPreferences.getBoolean("ultraFocusMode", false)) {
             UltraFocusManager.enableUltraFocusMode(this)
@@ -129,14 +142,14 @@ class SettingsActivity : AppCompatActivity() {
         } else {
             UltraFocusManager.setOrientation(this, false)
         }
-        
+
         // Initialize notification manager
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        
+
         // Initialize theme before setting content view
         val darkMode = sharedPreferences.getBoolean("darkMode", false)
         val amoledMode = sharedPreferences.getBoolean("amoledMode", false)
-        
+
         // Set theme mode only once
         when {
             amoledMode -> {
@@ -157,7 +170,7 @@ class SettingsActivity : AppCompatActivity() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
-        
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_settings)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -179,10 +192,10 @@ class SettingsActivity : AppCompatActivity() {
         ultraFocusModeToggle = findViewById(R.id.ultra_focus_mode_toggle)
         // Set initial state from SharedPreferences
         ultraFocusModeToggle.isChecked = sharedPreferences.getBoolean("ultraFocusMode", false)
-        
+
         // Save original orientation
         originalOrientation = requestedOrientation
-        
+
         setupUltraFocusModeToggle()
 
         // Apply ultra focus mode if it was enabled
@@ -201,7 +214,7 @@ class SettingsActivity : AppCompatActivity() {
         // Ignore system theme changes
         val darkMode = sharedPreferences.getBoolean("darkMode", false)
         val amoledMode = sharedPreferences.getBoolean("amoledMode", false)
-        
+
         when {
             amoledMode -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
@@ -261,14 +274,21 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun initializeViews() {
-        focusedTimeTxt = findViewById(R.id.focused_time_txt)
-        focusedTimeSlider = findViewById(R.id.slider_focused_time)
-        shortBreakTxt = findViewById(R.id.short_break_txt)
-        shortBreakSlider = findViewById(R.id.slider_short_break)
-        longBreakTxt = findViewById(R.id.long_break_txt)
-        longBreakSlider = findViewById(R.id.slider_long_break)
-        sessionsTxt = findViewById(R.id.sessions_txt)
-        sessionsSlider = findViewById(R.id.slider_sessions)
+        focusedTimeValueTxt = findViewById(R.id.focused_time_value_txt)
+        focusedTimeMinusBtn = findViewById(R.id.focused_time_minus_btn)
+        focusedTimePlusBtn = findViewById(R.id.focused_time_plus_btn)
+        shortBreakValueTxt = findViewById(R.id.short_break_value_txt)
+        shortBreakMinusBtn = findViewById(R.id.short_break_minus_btn)
+        shortBreakPlusBtn = findViewById(R.id.short_break_plus_btn)
+        longBreakValueTxt = findViewById(R.id.long_break_value_txt)
+        longBreakMinusBtn = findViewById(R.id.long_break_minus_btn)
+        longBreakPlusBtn = findViewById(R.id.long_break_plus_btn)
+        sessionsValueTxt = findViewById(R.id.sessions_value_txt)
+        sessionsMinusBtn = findViewById(R.id.sessions_minus_btn)
+        sessionsPlusBtn = findViewById(R.id.sessions_plus_btn)
+        alarmValueTxt = findViewById(R.id.alarm_value_txt)
+        alarmMinusBtn = findViewById(R.id.alarm_minus_btn)
+        alarmPlusBtn = findViewById(R.id.alarm_plus_btn)
         autoStartSessions = findViewById(R.id.auto_start_toggle)
         darkModeToggle = findViewById(R.id.dark_mode_toggle)
         clockSoundToggle = findViewById(R.id.clock_sound_toggle)
@@ -276,29 +296,25 @@ class SettingsActivity : AppCompatActivity() {
         githubCard = findViewById(R.id.github_card)
         supportCard = findViewById(R.id.support_card)
         settingsTxt = findViewById(R.id.settings_txt)
-        alarmTxt = findViewById(R.id.alarm_txt)
-        alarmSlider = findViewById(R.id.slider_alarm)
         uiSettingsTxt = findViewById(R.id.ui_settings_txt)
         runningTimerTxt = findViewById(R.id.running_timer_txt)
         madeWithLoveTxt = findViewById(R.id.made_with_love_txt)
         aboutTheAppTxt = findViewById(R.id.about_the_app_txt)
         uiSettingsComponents = findViewById(R.id.ui_settings_components)
         timerSettingsComponents = findViewById(R.id.timer_settings_components)
-        brownNoiseToggle = findViewById(R.id.brown_noise_toggle)
-        whiteNoiseToggle = findViewById(R.id.white_noise_toggle)
-        rainfallToggle = findViewById(R.id.rainfall_toggle)
-        lightJazzToggle = findViewById(R.id.light_jazz_toggle)
+        musicRow = findViewById(R.id.music_row)
+        musicValueTxt = findViewById(R.id.music_value_txt)
         keepScreenAwakeToggle = findViewById(R.id.keep_screen_awake_toggle)
         hapticFeedbackToggle = findViewById(R.id.haptic_feedback_toggle)
         statsCard = findViewById(R.id.stats_card)
     }
 
     private fun loadSavedSettings() {
-        focusedTimeSlider.value = sharedPreferences.getInt("focusedTime", 25).toFloat()
-        shortBreakSlider.value = sharedPreferences.getInt("shortBreak", 5).toFloat()
-        longBreakSlider.value = sharedPreferences.getInt("longBreak", 10).toFloat()
-        sessionsSlider.value = sharedPreferences.getInt("sessions", 4).toFloat()
-        alarmSlider.value = sharedPreferences.getInt("alarmDuration", 3).toFloat()
+        focusedTimeValue = sharedPreferences.getInt("focusedTime", 25)
+        shortBreakValue = sharedPreferences.getInt("shortBreak", 5)
+        longBreakValue = sharedPreferences.getInt("longBreak", 10)
+        sessionsValue = sharedPreferences.getInt("sessions", 4)
+        alarmValue = sharedPreferences.getInt("alarmDuration", 3)
         autoStartSessions.isChecked = sharedPreferences.getBoolean("autoStart", false)
         val darkMode = sharedPreferences.getBoolean("darkMode", false)
         darkModeToggle.isChecked = darkMode
@@ -309,7 +325,7 @@ class SettingsActivity : AppCompatActivity() {
         updateWakeLock(keepScreenAwake)
         hapticFeedbackToggle.isChecked = sharedPreferences.getBoolean("hapticFeedback", true)
         clockSoundToggle.isChecked = sharedPreferences.getBoolean("clockSound", false)
-        updateTexts()
+        renderStepperValues()
     }
 
     private fun applyTheme() {
@@ -324,137 +340,80 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
+    private fun renderFocusedTime() { focusedTimeValueTxt.text = "$focusedTimeValue mins" }
+    private fun renderShortBreak() { shortBreakValueTxt.text = "$shortBreakValue mins" }
+    private fun renderLongBreak() { longBreakValueTxt.text = "$longBreakValue mins" }
+    private fun renderSessions() { sessionsValueTxt.text = "$sessionsValue sessions" }
+    private fun renderAlarm() { alarmValueTxt.text = "$alarmValue times" }
+
+    private fun renderStepperValues() {
+        renderFocusedTime()
+        renderShortBreak()
+        renderLongBreak()
+        renderSessions()
+        renderAlarm()
+    }
+
+    private fun setupStepper(
+        minusBtn: View,
+        plusBtn: View,
+        min: Int,
+        max: Int,
+        step: Int,
+        getValue: () -> Int,
+        setValue: (Int) -> Unit,
+        render: () -> Unit,
+    ) {
+        minusBtn.setOnClickListener {
+            vibrate()
+            setValue((getValue() - step).coerceAtLeast(min))
+            render()
+            markTimerSettingsModified()
+        }
+        plusBtn.setOnClickListener {
+            vibrate()
+            setValue((getValue() + step).coerceAtMost(max))
+            render()
+            markTimerSettingsModified()
+        }
+    }
+
     private fun setupListeners() {
 
-        focusedTimeSlider.addOnChangeListener { _, value, _ ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                focusedTimeTxt.setText("${value.toInt()}")
-                isUpdatingSlider = false
-            }
-            markTimerSettingsModified()
-        }
+        setupStepper(
+            focusedTimeMinusBtn, focusedTimePlusBtn,
+            min = 1, max = 120, step = 5,
+            getValue = { focusedTimeValue }, setValue = { focusedTimeValue = it },
+            render = ::renderFocusedTime,
+        )
 
-        focusedTimeTxt.addTextChangedListener { text ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                val value = text.toString().toIntOrNull()
-                if (value != null) {
-                    val clampedValue = value.coerceIn(focusedTimeSlider.valueFrom.toInt(), focusedTimeSlider.valueTo.toInt())
-                    focusedTimeSlider.value = clampedValue.toFloat()
-                    if (value != clampedValue) {
-                        focusedTimeTxt.setText(clampedValue.toString())
-                        focusedTimeTxt.setSelection(focusedTimeTxt.text.length)
-                    }
-                    markTimerSettingsModified()
-                }
-                isUpdatingSlider = false
-            }
-        }
+        setupStepper(
+            shortBreakMinusBtn, shortBreakPlusBtn,
+            min = 1, max = 10, step = 1,
+            getValue = { shortBreakValue }, setValue = { shortBreakValue = it },
+            render = ::renderShortBreak,
+        )
 
-        shortBreakSlider.addOnChangeListener { _, value, _ ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                shortBreakTxt.setText("${value.toInt()}")
-                isUpdatingSlider = false
-            }
-            markTimerSettingsModified()
-        }
+        setupStepper(
+            longBreakMinusBtn, longBreakPlusBtn,
+            min = 1, max = 30, step = 5,
+            getValue = { longBreakValue }, setValue = { longBreakValue = it },
+            render = ::renderLongBreak,
+        )
 
-        shortBreakTxt.addTextChangedListener { text ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                val value = text.toString().toIntOrNull()
-                if (value != null) {
-                    val clampedValue = value.coerceIn(shortBreakSlider.valueFrom.toInt(), shortBreakSlider.valueTo.toInt())
-                    shortBreakSlider.value = clampedValue.toFloat()
-                    if (value != clampedValue) {
-                        shortBreakTxt.setText(clampedValue.toString())
-                        shortBreakTxt.setSelection(shortBreakTxt.text.length)
-                    }
-                    markTimerSettingsModified()
-                }
-                isUpdatingSlider = false
-            }
-        }
+        setupStepper(
+            sessionsMinusBtn, sessionsPlusBtn,
+            min = 1, max = 5, step = 1,
+            getValue = { sessionsValue }, setValue = { sessionsValue = it },
+            render = ::renderSessions,
+        )
 
-        longBreakSlider.addOnChangeListener { _, value, _ ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                longBreakTxt.setText("${value.toInt()}")
-                isUpdatingSlider = false
-            }
-            markTimerSettingsModified()
-        }
-
-        longBreakTxt.addTextChangedListener { text ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                val value = text.toString().toIntOrNull()
-                if (value != null) {
-                    val clampedValue = value.coerceIn(longBreakSlider.valueFrom.toInt(), longBreakSlider.valueTo.toInt())
-                    longBreakSlider.value = clampedValue.toFloat()
-                    if (value != clampedValue) {
-                        longBreakTxt.setText(clampedValue.toString())
-                        longBreakTxt.setSelection(longBreakTxt.text.length)
-                    }
-                    markTimerSettingsModified()
-                }
-                isUpdatingSlider = false
-            }
-        }
-
-        sessionsSlider.addOnChangeListener { _, value, _ ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                sessionsTxt.setText("${value.toInt()}")
-                isUpdatingSlider = false
-            }
-            markTimerSettingsModified()
-        }
-
-        sessionsTxt.addTextChangedListener { text ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                val value = text.toString().toIntOrNull()
-                if (value != null) {
-                    val clampedValue = value.coerceIn(sessionsSlider.valueFrom.toInt(), sessionsSlider.valueTo.toInt())
-                    sessionsSlider.value = clampedValue.toFloat()
-                    if (value != clampedValue) {
-                        sessionsTxt.setText(clampedValue.toString())
-                        sessionsTxt.setSelection(sessionsTxt.text.length)
-                    }
-                    markTimerSettingsModified()
-                }
-                isUpdatingSlider = false
-            }
-        }
-
-        alarmSlider.addOnChangeListener { _, value, _ ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                alarmTxt.setText("${value.toInt()}")
-                isUpdatingSlider = false
-            }
-            markTimerSettingsModified()
-        }
-
-        alarmTxt.addTextChangedListener { text ->
-            if (!isUpdatingSlider) {
-                isUpdatingSlider = true
-                val value = text.toString().toIntOrNull()
-                if (value != null) {
-                    val clampedValue = value.coerceIn(alarmSlider.valueFrom.toInt(), alarmSlider.valueTo.toInt())
-                    alarmSlider.value = clampedValue.toFloat()
-                    if (value != clampedValue) {
-                        alarmTxt.setText(clampedValue.toString())
-                        alarmTxt.setSelection(alarmTxt.text.length)
-                    }
-                    markTimerSettingsModified()
-                }
-                isUpdatingSlider = false
-            }
-        }
+        setupStepper(
+            alarmMinusBtn, alarmPlusBtn,
+            min = 1, max = 5, step = 1,
+            getValue = { alarmValue }, setValue = { alarmValue = it },
+            render = ::renderAlarm,
+        )
 
         autoStartSessions.setOnCheckedChangeListener { _, _ ->
             markTimerSettingsModified()
@@ -528,22 +487,13 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateTexts() {
-        focusedTimeTxt.setText("${focusedTimeSlider.value.toInt()}")
-        shortBreakTxt.setText("${shortBreakSlider.value.toInt()}")
-        longBreakTxt.setText("${longBreakSlider.value.toInt()}")
-        val sessions = sessionsSlider.value.toInt()
-        sessionsTxt.setText("$sessions")
-        alarmTxt.setText("${alarmSlider.value.toInt()}")
-    }
-
     private fun saveSettings() {
         sharedPreferences.edit().apply {
-            putInt("focusedTime", focusedTimeSlider.value.toInt())
-            putInt("shortBreak", shortBreakSlider.value.toInt())
-            putInt("longBreak", longBreakSlider.value.toInt())
-            putInt("sessions", sessionsSlider.value.toInt())
-            putInt("alarmDuration", alarmSlider.value.toInt())
+            putInt("focusedTime", focusedTimeValue)
+            putInt("shortBreak", shortBreakValue)
+            putInt("longBreak", longBreakValue)
+            putInt("sessions", sessionsValue)
+            putInt("alarmDuration", alarmValue)
             putBoolean("autoStart", autoStartSessions.isChecked)
             putBoolean("hapticFeedback", hapticFeedbackToggle.isChecked)
             putString("focusText", "Focus")  // Reset focus text when settings are changed
@@ -555,7 +505,7 @@ class SettingsActivity : AppCompatActivity() {
     @RequiresPermission(Manifest.permission.VIBRATE)
     private fun vibrate() {
         if (!hapticFeedbackToggle.isChecked) return // Don't vibrate if haptic feedback is disabled
-        
+
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         if (vibrator.hasVibrator()) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -654,51 +604,43 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun handleMusicToggle() {
-        val musicName = when {
-            brownNoiseToggle.isChecked -> "brown_noise"
-            whiteNoiseToggle.isChecked -> "white_noise"
-            rainfallToggle.isChecked -> "rainfall"
-            lightJazzToggle.isChecked -> "light_jazz"
+        val musicName = selectedMusic ?: return
+
+        val url = when (musicName) {
+            "brown_noise" -> "https://github.com/Arijit-05/fomodoro_assets/releases/download/brown-noise/brown_noise.mp3"
+            "white_noise" -> "https://github.com/Arijit-05/fomodoro_assets/releases/download/white-noise/white_noise.mp3"
+            "rainfall" -> "https://github.com/Arijit-05/fomodoro_assets/releases/download/rainfall/rainfall.mp3"
+            "light_jazz" -> "https://github.com/Arijit-05/fomodoro_assets/releases/download/light-jazz/light_jazz.mp3"
             else -> null
         }
 
-        if (musicName != null) {
-            val url = when (musicName) {
-                "brown_noise" -> "https://github.com/Arijit-05/fomodoro_assets/releases/download/brown-noise/brown_noise.mp3"
-                "white_noise" -> "https://github.com/Arijit-05/fomodoro_assets/releases/download/white-noise/white_noise.mp3"
-                "rainfall" -> "https://github.com/Arijit-05/fomodoro_assets/releases/download/rainfall/rainfall.mp3"
-                "light_jazz" -> "https://github.com/Arijit-05/fomodoro_assets/releases/download/light-jazz/light_jazz.mp3"
-                else -> null
-            }
-
-            if (url != null) {
-                CoroutineScope(Dispatchers.Main).launch {
-                    downloadMusic(url, musicName)
-                }
+        if (url != null) {
+            CoroutineScope(Dispatchers.Main).launch {
+                downloadMusic(url, musicName)
             }
         }
     }
 
+    private fun renderMusic() {
+        musicValueTxt.text = musicOptions.first { it.first == selectedMusic }.second
+    }
+
     private fun initializeMusicToggles() {
-        // Load saved toggle states
-        val savedMusic = sharedPreferences.getString("selected_music", null)
-        brownNoiseToggle.isChecked = savedMusic == "brown_noise"
-        whiteNoiseToggle.isChecked = savedMusic == "white_noise"
-        rainfallToggle.isChecked = savedMusic == "rainfall"
-        lightJazzToggle.isChecked = savedMusic == "light_jazz"
+        // Load saved selection
+        selectedMusic = sharedPreferences.getString("selected_music", null)
+        renderMusic()
     }
 
     private fun setupMusicToggleListeners() {
-        val toggleListener = { toggle: EinkSwitch, musicName: String ->
-            if (toggle.isChecked) {
-                // Uncheck other toggles
-                brownNoiseToggle.isChecked = toggle == brownNoiseToggle
-                whiteNoiseToggle.isChecked = toggle == whiteNoiseToggle
-                rainfallToggle.isChecked = toggle == rainfallToggle
-                lightJazzToggle.isChecked = toggle == lightJazzToggle
+        musicRow.setOnClickListener {
+            vibrate()
 
-                // Save selection
-                sharedPreferences.edit().putString("selected_music", musicName).apply()
+            val currentIndex = musicOptions.indexOfFirst { it.first == selectedMusic }
+            selectedMusic = musicOptions[(currentIndex + 1) % musicOptions.size].first
+            renderMusic()
+
+            if (selectedMusic != null) {
+                sharedPreferences.edit().putString("selected_music", selectedMusic).apply()
 
                 // Check permissions and download if needed
                 if (checkStoragePermissions()) {
@@ -709,22 +651,6 @@ class SettingsActivity : AppCompatActivity() {
             } else {
                 sharedPreferences.edit().remove("selected_music").apply()
             }
-        }
-
-        brownNoiseToggle.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) toggleListener(brownNoiseToggle, "brown_noise")
-        }
-
-        whiteNoiseToggle.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) toggleListener(whiteNoiseToggle, "white_noise")
-        }
-
-        rainfallToggle.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) toggleListener(rainfallToggle, "rainfall")
-        }
-
-        lightJazzToggle.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) toggleListener(lightJazzToggle, "light_jazz")
         }
     }
 

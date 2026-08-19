@@ -51,454 +51,384 @@
                 android:orientation="vertical"
                 android:visibility="visible">
 
-                <!-- FOCUSED TIME CARD -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/focused_time_card"
+                <!-- FOCUSED TIME ROW -->
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:cardCornerRadius="20dp">
+                    android:paddingVertical="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Focused Time"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
 
                     <LinearLayout
-                        android:id="@+id/focused_time_card_bg"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/cardview_dark_background"
-                        android:orientation="vertical"
-                        android:padding="15dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:id="@+id/ft"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_bold"
-                                android:text="Focused Time"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:id="@+id/focused_time_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toStartOf="@id/mins_txt"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text="25"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                android:inputType="number"
-                                android:maxLines="1"
-                                android:background="@android:color/transparent"
-                                android:gravity="end"
-                                android:minWidth="40dp"/>
-
-                            <TextView
-                                android:id="@+id/mins_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text=" mins"
-                                android:textColor="@color/white"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-
-                        <com.google.android.material.slider.Slider
-                            android:id="@+id/slider_focused_time"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:stepSize="1"
-                            android:value="25"
-                            android:valueFrom="1"
-                            android:valueTo="120"
-                            app:thumbColor="@color/white"
-                            app:thumbWidth="18dp"
-                            app:thumbHeight="18dp"
-                            app:haloRadius="0dp"
-                            app:tickVisible="false"
-                            app:trackColorActive="@color/white"
-                            app:trackColorInactive="@color/black"
-                            app:trackHeight="8dp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- SHORT BREAK CARD -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/short_break_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    app:cardCornerRadius="20dp">
-
-                    <LinearLayout
-                        android:id="@+id/short_break_card_bg"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/cardview_dark_background"
-                        android:orientation="vertical"
-                        android:padding="15dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/sb"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_bold"
-                                android:text="Short Break"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:id="@+id/short_break_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toStartOf="@id/mins_txt_sb"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text="5"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                android:inputType="number"
-                                android:maxLines="1"
-                                android:background="@android:color/transparent"
-                                android:gravity="end"
-                                android:minWidth="40dp"/>
-
-                            <TextView
-                                android:id="@+id/mins_txt_sb"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text=" mins"
-                                android:textColor="@color/white"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-
-                        <com.google.android.material.slider.Slider
-                            android:id="@+id/slider_short_break"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:stepSize="1"
-                            android:value="5"
-                            android:valueFrom="1"
-                            android:valueTo="10"
-                            app:thumbColor="@color/white"
-                            app:thumbWidth="18dp"
-                            app:thumbHeight="18dp"
-                            app:haloRadius="0dp"
-                            app:tickVisible="false"
-                            app:trackColorActive="@color/white"
-                            app:trackColorInactive="@color/black"
-                            app:trackHeight="8dp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- LONG BREAK CARD -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/long_break_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    app:cardCornerRadius="20dp">
-
-                    <LinearLayout
-                        android:id="@+id/long_break_card_bg"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/cardview_dark_background"
-                        android:orientation="vertical"
-                        android:padding="15dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/lb"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_bold"
-                                android:text="Long Break"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:id="@+id/long_break_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toStartOf="@id/mins_txt_lb"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text="10"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                android:inputType="number"
-                                android:maxLines="1"
-                                android:background="@android:color/transparent"
-                                android:gravity="end"
-                                android:minWidth="40dp"/>
-
-                            <TextView
-                                android:id="@+id/mins_txt_lb"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text=" mins"
-                                android:textColor="@color/white"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-
-                        <com.google.android.material.slider.Slider
-                            android:id="@+id/slider_long_break"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:stepSize="1"
-                            android:value="10"
-                            android:valueFrom="5"
-                            android:valueTo="30"
-                            app:thumbColor="@color/white"
-                            app:thumbWidth="18dp"
-                            app:thumbHeight="18dp"
-                            app:haloRadius="0dp"
-                            app:tickVisible="false"
-                            app:trackColorActive="@color/white"
-                            app:trackColorInactive="@color/black"
-                            app:trackHeight="8dp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- SESSIONS CARD -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/sessions_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    app:cardCornerRadius="20dp">
-
-                    <LinearLayout
-                        android:id="@+id/sessions_card_bg"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/cardview_dark_background"
-                        android:orientation="vertical"
-                        android:padding="15dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/s"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_bold"
-                                android:text="Sessions"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:id="@+id/sessions_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toStartOf="@id/sess_txt"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text="4"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                android:inputType="number"
-                                android:maxLines="1"
-                                android:background="@android:color/transparent"
-                                android:gravity="end"
-                                android:minWidth="40dp"/>
-
-                            <TextView
-                                android:id="@+id/sess_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text=" sessions"
-                                android:textColor="@color/white"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-
-                        <com.google.android.material.slider.Slider
-                            android:id="@+id/slider_sessions"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:stepSize="1"
-                            android:value="4"
-                            android:valueFrom="1"
-                            android:valueTo="5"
-                            app:thumbColor="@color/white"
-                            app:thumbWidth="18dp"
-                            app:thumbHeight="18dp"
-                            app:haloRadius="0dp"
-                            app:tickVisible="false"
-                            app:trackColorActive="@color/white"
-                            app:trackColorInactive="@color/black"
-                            app:trackHeight="8dp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- ALARM CARD -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/alarm_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    app:cardCornerRadius="20dp">
-
-                    <LinearLayout
-                        android:id="@+id/alarm_card_bg"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/cardview_dark_background"
-                        android:orientation="vertical"
-                        android:padding="15dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <TextView
-                                android:id="@+id/a"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_bold"
-                                android:text="Alarm"
-                                android:textColor="@color/white"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:id="@+id/alarm_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toStartOf="@id/times_txt"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text="3"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                android:inputType="number"
-                                android:maxLines="1"
-                                android:background="@android:color/transparent"
-                                android:gravity="end"
-                                android:minWidth="40dp"/>
-
-                            <TextView
-                                android:id="@+id/times_txt"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/lato_regular"
-                                android:text=" times"
-                                android:textColor="@color/white"
-                                android:textSize="16sp" />
-
-                        </RelativeLayout>
-
-                        <com.google.android.material.slider.Slider
-                            android:id="@+id/slider_alarm"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:stepSize="1"
-                            android:value="3"
-                            android:valueFrom="1"
-                            android:valueTo="5"
-                            app:thumbColor="@color/white"
-                            app:thumbWidth="18dp"
-                            app:thumbHeight="18dp"
-                            app:haloRadius="0dp"
-                            app:tickVisible="false"
-                            app:trackColorActive="@color/white"
-                            app:trackColorInactive="@color/black"
-                            app:trackHeight="8dp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <!-- AUTO START SESSIONS CARD -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/auto_start_sessions_card"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    app:cardCornerRadius="20dp">
-
-                    <RelativeLayout
-                        android:id="@+id/auto_start_sessions_card_bg"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/cardview_dark_background"
-                        android:padding="15dp">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/ass"
+                            android:id="@+id/focused_time_minus_btn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
                             android:fontFamily="@font/lato_bold"
-                            android:text="Auto start sessions"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="−"
                             android:textColor="@color/white"
                             android:textSize="18sp" />
 
-                        <com.arijit.pomodoro.widgets.EinkSwitch
-                            android:id="@+id/auto_start_toggle"
+                        <TextView
+                            android:id="@+id/focused_time_value_txt"
                             android:layout_width="wrap_content"
-                            android:layout_height="15dp"
-                            android:layout_alignParentEnd="true"
-                            app:thumbTint="@color/switch_thumb_tint_dark"
-                            app:trackTint="@color/switch_track_tint_dark"
-                            app:trackDecorationTint="@color/white"
-                            tools:ignore="UseSwitchCompatOrMaterialXml" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center"
+                            android:minWidth="72dp"
+                            android:text="25 mins"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
 
-                    </RelativeLayout>
+                        <TextView
+                            android:id="@+id/focused_time_plus_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="+"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
 
-                </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
-                <!-- BLANK SPACE -->
+                </RelativeLayout>
+
+                <!-- SHORT BREAK ROW -->
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="10dp" />
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Short Break"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/short_break_minus_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="−"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/short_break_value_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center"
+                            android:minWidth="72dp"
+                            android:text="5 mins"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/short_break_plus_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="+"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- LONG BREAK ROW -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Long Break"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/long_break_minus_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="−"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/long_break_value_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center"
+                            android:minWidth="72dp"
+                            android:text="10 mins"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/long_break_plus_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="+"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- SESSIONS ROW -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Sessions"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sessions_minus_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="−"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/sessions_value_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center"
+                            android:minWidth="88dp"
+                            android:text="4 sessions"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/sessions_plus_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="+"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- ALARM ROW -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Alarm"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/alarm_minus_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="−"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/alarm_value_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:fontFamily="@font/lato_regular"
+                            android:gravity="center"
+                            android:minWidth="72dp"
+                            android:text="3 times"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/alarm_plus_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bordered_box_dark"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/lato_bold"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="4dp"
+                            android:text="+"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <!-- AUTO START SESSIONS ROW -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Auto start sessions"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <com.arijit.pomodoro.widgets.EinkSwitch
+                        android:id="@+id/auto_start_toggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        app:thumbTint="@color/switch_thumb_tint_dark"
+                        app:trackTint="@color/switch_track_tint_dark"
+                        app:trackDecorationTint="@color/white"
+                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                </RelativeLayout>
 
             </LinearLayout>
 
@@ -518,16 +448,27 @@
         <!-- UI SETTINGS TXT -->
         <TextView
             android:id="@+id/ui_settings_txt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/timer_settings_placeholder"
             android:layout_marginStart="22dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginTop="10dp"
             android:visibility="visible"
-            android:fontFamily="@font/lato_regular"
+            android:fontFamily="@font/lato_bold"
             android:text="UI settings"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="13sp" />
+
+        <View
+            android:id="@+id/ui_settings_rule"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/ui_settings_txt"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/white" />
 
         <!-- UI SETTINGS COMPONENTS -->
         <LinearLayout
@@ -535,266 +476,212 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            android:layout_below="@id/ui_settings_txt"
+            android:layout_below="@id/ui_settings_rule"
             android:layout_marginHorizontal="22dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:orientation="vertical">
 
-            <!-- DARK MODE CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/dark_mode_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:id="@+id/dark_mode_card_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/cardview_dark_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:id="@+id/dm"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Dark mode"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/dark_mode_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- AMOLED CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/amoled_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:id="@+id/amoled_card_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/cardview_dark_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:id="@+id/am"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Amoled"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/amoled_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- KEEP SCREEN AWAKE CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/keep_screen_awake_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:id="@+id/keep_screen_awake_card_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/dark_card_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Keep screen awake"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/keep_screen_awake_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- HAPTIC FEEDBACK CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/haptic_feedback_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:id="@+id/haptic_feedback_card_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/cardview_dark_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Haptic feedback"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/haptic_feedback_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- ULTRA FOCUS MODE CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/ultra_focus_mode_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:id="@+id/ultra_focus_mode_card_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/cardview_dark_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Ultra focus mode"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/ultra_focus_mode_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- CLOCK SOUND CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/clock_sound_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/cardview_dark_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Clock sound"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/clock_sound_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- BLANK SPACE -->
+            <!-- DARK MODE ROW -->
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Dark mode"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <com.arijit.pomodoro.widgets.EinkSwitch
+                    android:id="@+id/dark_mode_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:thumbTint="@color/switch_thumb_tint_dark"
+                    app:trackTint="@color/switch_track_tint_dark"
+                    app:trackDecorationTint="@color/white"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </RelativeLayout>
+
+            <!-- AMOLED ROW -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Amoled"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <com.arijit.pomodoro.widgets.EinkSwitch
+                    android:id="@+id/amoled_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:thumbTint="@color/switch_thumb_tint_dark"
+                    app:trackTint="@color/switch_track_tint_dark"
+                    app:trackDecorationTint="@color/white"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </RelativeLayout>
+
+            <!-- KEEP SCREEN AWAKE ROW -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Keep screen awake"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <com.arijit.pomodoro.widgets.EinkSwitch
+                    android:id="@+id/keep_screen_awake_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:thumbTint="@color/switch_thumb_tint_dark"
+                    app:trackTint="@color/switch_track_tint_dark"
+                    app:trackDecorationTint="@color/white"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </RelativeLayout>
+
+            <!-- HAPTIC FEEDBACK ROW -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Haptic feedback"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <com.arijit.pomodoro.widgets.EinkSwitch
+                    android:id="@+id/haptic_feedback_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:thumbTint="@color/switch_thumb_tint_dark"
+                    app:trackTint="@color/switch_track_tint_dark"
+                    app:trackDecorationTint="@color/white"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </RelativeLayout>
+
+            <!-- ULTRA FOCUS MODE ROW -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Ultra focus mode"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <com.arijit.pomodoro.widgets.EinkSwitch
+                    android:id="@+id/ultra_focus_mode_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:thumbTint="@color/switch_thumb_tint_dark"
+                    app:trackTint="@color/switch_track_tint_dark"
+                    app:trackDecorationTint="@color/white"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </RelativeLayout>
+
+            <!-- CLOCK SOUND ROW -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Clock sound"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <com.arijit.pomodoro.widgets.EinkSwitch
+                    android:id="@+id/clock_sound_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:thumbTint="@color/switch_thumb_tint_dark"
+                    app:trackTint="@color/switch_track_tint_dark"
+                    app:trackDecorationTint="@color/white"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
         <!-- BACKGROUND MUSIC TXT -->
         <TextView
             android:id="@+id/background_music_txt"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/ui_settings_components"
             android:layout_marginStart="22dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginTop="10dp"
             android:visibility="visible"
-            android:fontFamily="@font/lato_regular"
+            android:fontFamily="@font/lato_bold"
             android:text="Background Music"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="13sp" />
+
+        <View
+            android:id="@+id/background_music_rule"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/background_music_txt"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/white" />
 
         <!-- BACKGROUND MUSIC COMPONENTS -->
         <LinearLayout
@@ -802,171 +689,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            android:layout_below="@id/background_music_txt"
+            android:layout_below="@id/background_music_rule"
             android:layout_marginHorizontal="22dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="4dp"
             android:orientation="vertical">
 
-            <!-- BROWN NOISE CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/brown_noise_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:id="@+id/brown_noise_card_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/cardview_dark_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Brown Noise"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/brown_noise_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- WHITE NOISE CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/white_noise_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:id="@+id/white_noise_card_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/cardview_dark_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="White Noise"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/white_noise_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- RAINFALL CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/rainfall_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:id="@+id/rainfall_card_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/cardview_dark_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Rainfall"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/rainfall_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- LIGHT JAZZ CARD -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/light_jazz_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:id="@+id/light_jazz_card_bg"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/cardview_dark_background"
-                    android:padding="15dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Light jazz"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
-
-                    <com.arijit.pomodoro.widgets.EinkSwitch
-                        android:id="@+id/light_jazz_toggle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="15dp"
-                        android:layout_alignParentEnd="true"
-                        app:thumbTint="@color/switch_thumb_tint_dark"
-                        app:trackTint="@color/switch_track_tint_dark"
-                        app:trackDecorationTint="@color/white"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- BLANK SPACE -->
+            <!-- MUSIC ROW -->
             <RelativeLayout
+                android:id="@+id/music_row"
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Music"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/music_value_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bordered_box_dark"
+                    android:fontFamily="@font/lato_bold"
+                    android:paddingHorizontal="14dp"
+                    android:paddingVertical="6dp"
+                    android:text="Off"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -977,47 +739,49 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/background_music_components"
             android:layout_marginStart="22dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/lato_regular"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_bold"
             android:text="Stats"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="13sp" />
 
-        <!-- YOUR STATS CARD -->
-        <androidx.cardview.widget.CardView
+        <View
+            android:id="@+id/stats_rule"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/stats_txt"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/white" />
+
+        <!-- YOUR STATS ROW -->
+        <RelativeLayout
             android:id="@+id/stats_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/stats_txt"
+            android:layout_below="@id/stats_rule"
             android:layout_marginHorizontal="22dp"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="20dp">
+            android:paddingVertical="6dp">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/cardview_dark_background"
-                android:padding="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="@font/lato_bold"
+                android:text="Check your stats"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:fontFamily="@font/lato_bold"
-                    android:text="Check your stats"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/stats" />
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/stats_dark" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
         <!-- ABOUT THE APP TXT -->
         <TextView
@@ -1026,149 +790,145 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/stats_card"
             android:layout_marginStart="22dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/lato_regular"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_bold"
             android:text="About the app"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="13sp" />
 
-        <!-- GITHUB CARD -->
-        <androidx.cardview.widget.CardView
+        <View
+            android:id="@+id/about_the_app_rule"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/about_the_app_txt"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginTop="3dp"
+            android:background="@color/white" />
+
+        <!-- GITHUB ROW -->
+        <RelativeLayout
             android:id="@+id/github_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/about_the_app_txt"
+            android:layout_below="@id/about_the_app_rule"
             android:layout_marginHorizontal="22dp"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="20dp">
+            android:paddingVertical="6dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/github_icon_bg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:cardCornerRadius="25dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/medium_red"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/github" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
-                android:id="@+id/github_card_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/cardview_dark_background"
-                android:orientation="horizontal"
-                android:padding="10dp">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@id/github_icon_bg"
+                android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:cardCornerRadius="25dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/medium_red"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/github" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/gr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="15dp"
-                    android:orientation="vertical">
+                    android:fontFamily="@font/lato_bold"
+                    android:includeFontPadding="false"
+                    android:text="Github Repository"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
 
-                    <TextView
-                        android:id="@+id/gr"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lato_bold"
-                        android:includeFontPadding="false"
-                        android:text="Github Repository"
-                        android:textColor="@color/white"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:id="@+id/ri"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lato_regular"
-                        android:text="Report issues or star the project"
-                        android:textColor="@color/white"
-                        android:textSize="13sp" />
-
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/ri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Report issues or star the project"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
-        <!-- SUPPORT CARD -->
-        <androidx.cardview.widget.CardView
+        <!-- SUPPORT ROW -->
+        <RelativeLayout
             android:id="@+id/support_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/github_card"
             android:layout_marginHorizontal="22dp"
-            android:layout_marginTop="10dp"
-            app:cardCornerRadius="20dp">
+            android:paddingVertical="6dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/support_icon_bg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:cardCornerRadius="25dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/medium_red"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/paper_cup" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
-                android:id="@+id/support_card_bg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/cardview_dark_background"
-                android:orientation="horizontal"
-                android:padding="10dp">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_toEndOf="@id/support_icon_bg"
+                android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    app:cardCornerRadius="25dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/medium_red"
-                        android:gravity="center">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/paper_cup" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="15dp"
-                    android:orientation="vertical">
+                    android:fontFamily="@font/lato_bold"
+                    android:includeFontPadding="false"
+                    android:text="Buy me a Coffee"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lato_bold"
-                        android:includeFontPadding="false"
-                        android:text="Buy me a Coffee"
-                        android:textColor="@color/white"
-                        android:textSize="17sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lato_regular"
-                        android:text="Help me keep building free and open source applications."
-                        android:textColor="@color/white"
-                        android:textSize="13sp" />
-
-                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="Help me keep building free and open source applications."
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
 
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
         <!-- MADE WITH LOVE TXT -->
         <TextView
@@ -1177,7 +937,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/support_card"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/lato_regular"
             android:text="Made with ❤️ by Arijit"
             android:textColor="@color/white"
