@@ -64,6 +64,7 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var githubCard: View
     private lateinit var supportCard: View
     private lateinit var settingsTxt: TextView
+    private lateinit var backBtn: ImageView
     private lateinit var uiSettingsTxt: TextView
     private lateinit var aboutTheAppTxt: TextView
     private lateinit var runningTimerTxt: TextView
@@ -206,6 +207,11 @@ class SettingsActivity : AppCompatActivity() {
             vibrate()
             startActivity(Intent(this@SettingsActivity, StatsActivity::class.java))
         }
+
+        backBtn.setOnClickListener {
+            vibrate()
+            finish()
+        }
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
@@ -295,6 +301,7 @@ class SettingsActivity : AppCompatActivity() {
         githubCard = findViewById(R.id.github_card)
         supportCard = findViewById(R.id.support_card)
         settingsTxt = findViewById(R.id.settings_txt)
+        backBtn = findViewById(R.id.back_btn)
         uiSettingsTxt = findViewById(R.id.ui_settings_txt)
         runningTimerTxt = findViewById(R.id.running_timer_txt)
         madeWithLoveTxt = findViewById(R.id.made_with_love_txt)
