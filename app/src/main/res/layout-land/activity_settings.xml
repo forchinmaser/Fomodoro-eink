@@ -118,14 +118,12 @@
                             android:value="25"
                             android:valueFrom="1"
                             android:valueTo="120"
-                            app:thumbColor="@color/medium_red"
+                            app:thumbColor="@color/black"
                             app:thumbRadius="9dp"
-                            app:thumbStrokeColor="@color/white"
-                            app:thumbStrokeWidth="2dp"
                             app:haloRadius="0dp"
                             app:tickVisible="false"
-                            app:trackColorActive="@color/medium_red"
-                            app:trackColorInactive="@color/slider_light"
+                            app:trackColorActive="@color/black"
+                            app:trackColorInactive="@color/white"
                             app:trackHeight="8dp" />
 
                     </LinearLayout>
@@ -200,14 +198,12 @@
                             android:value="5"
                             android:valueFrom="1"
                             android:valueTo="10"
-                            app:thumbColor="@color/medium_red"
+                            app:thumbColor="@color/black"
                             app:thumbRadius="9dp"
-                            app:thumbStrokeColor="@color/white"
-                            app:thumbStrokeWidth="2dp"
                             app:haloRadius="0dp"
                             app:tickVisible="false"
-                            app:trackColorActive="@color/medium_red"
-                            app:trackColorInactive="@color/slider_light"
+                            app:trackColorActive="@color/black"
+                            app:trackColorInactive="@color/white"
                             app:trackHeight="8dp" />
 
                     </LinearLayout>
@@ -282,14 +278,12 @@
                             android:value="10"
                             android:valueFrom="1"
                             android:valueTo="30"
-                            app:thumbColor="@color/medium_red"
+                            app:thumbColor="@color/black"
                             app:thumbRadius="9dp"
-                            app:thumbStrokeColor="@color/white"
-                            app:thumbStrokeWidth="2dp"
                             app:haloRadius="0dp"
                             app:tickVisible="false"
-                            app:trackColorActive="@color/medium_red"
-                            app:trackColorInactive="@color/slider_light"
+                            app:trackColorActive="@color/black"
+                            app:trackColorInactive="@color/white"
                             app:trackHeight="8dp" />
 
                     </LinearLayout>
@@ -364,14 +358,12 @@
                             android:value="4"
                             android:valueFrom="1"
                             android:valueTo="5"
-                            app:thumbColor="@color/medium_red"
+                            app:thumbColor="@color/black"
                             app:thumbRadius="9dp"
-                            app:thumbStrokeColor="@color/white"
-                            app:thumbStrokeWidth="2dp"
                             app:haloRadius="0dp"
                             app:tickVisible="false"
-                            app:trackColorActive="@color/medium_red"
-                            app:trackColorInactive="@color/slider_light"
+                            app:trackColorActive="@color/black"
+                            app:trackColorInactive="@color/white"
                             app:trackHeight="8dp" />
 
                     </LinearLayout>
@@ -446,14 +438,12 @@
                             android:value="3"
                             android:valueFrom="1"
                             android:valueTo="5"
-                            app:thumbColor="@color/medium_red"
+                            app:thumbColor="@color/black"
                             app:thumbRadius="9dp"
-                            app:thumbStrokeColor="@color/white"
-                            app:thumbStrokeWidth="2dp"
                             app:haloRadius="0dp"
                             app:tickVisible="false"
-                            app:trackColorActive="@color/medium_red"
-                            app:trackColorInactive="@color/slider_light"
+                            app:trackColorActive="@color/black"
+                            app:trackColorInactive="@color/white"
                             app:trackHeight="8dp" />
 
                     </LinearLayout>
