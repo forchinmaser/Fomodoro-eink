@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.android.material.materialswitch.MaterialSwitch
+import com.arijit.pomodoro.widgets.EinkSwitch
 import com.google.android.material.slider.Slider
 import android.widget.EditText
 import androidx.core.widget.addTextChangedListener
@@ -55,10 +55,10 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var sessionsSlider: Slider
     private lateinit var alarmTxt: EditText
     private lateinit var alarmSlider: Slider
-    private lateinit var autoStartSessions: MaterialSwitch
-    private lateinit var darkModeToggle: MaterialSwitch
-    private lateinit var clockSoundToggle: MaterialSwitch
-    private lateinit var amoledToggle: MaterialSwitch
+    private lateinit var autoStartSessions: EinkSwitch
+    private lateinit var darkModeToggle: EinkSwitch
+    private lateinit var clockSoundToggle: EinkSwitch
+    private lateinit var amoledToggle: EinkSwitch
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var githubCard: androidx.cardview.widget.CardView
     private lateinit var supportCard: androidx.cardview.widget.CardView
@@ -69,17 +69,17 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var madeWithLoveTxt: TextView
     private lateinit var uiSettingsComponents: LinearLayout
     private lateinit var timerSettingsComponents: LinearLayout
-    private lateinit var brownNoiseToggle: MaterialSwitch
-    private lateinit var whiteNoiseToggle: MaterialSwitch
-    private lateinit var rainfallToggle: MaterialSwitch
-    private lateinit var lightJazzToggle: MaterialSwitch
-    private lateinit var keepScreenAwakeToggle: MaterialSwitch
-    private lateinit var hapticFeedbackToggle: MaterialSwitch
+    private lateinit var brownNoiseToggle: EinkSwitch
+    private lateinit var whiteNoiseToggle: EinkSwitch
+    private lateinit var rainfallToggle: EinkSwitch
+    private lateinit var lightJazzToggle: EinkSwitch
+    private lateinit var keepScreenAwakeToggle: EinkSwitch
+    private lateinit var hapticFeedbackToggle: EinkSwitch
     private lateinit var statsCard: CardView
     private val CHANNEL_ID = "download_channel"
     private val NOTIFICATION_ID = 1
     private var wakeLock: android.os.PowerManager.WakeLock? = null
-    private lateinit var ultraFocusModeToggle: MaterialSwitch
+    private lateinit var ultraFocusModeToggle: EinkSwitch
     private var originalOrientation: Int = 0
     private var originalDndMode: Int = 0
     private lateinit var notificationManager: NotificationManager
@@ -689,7 +689,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun setupMusicToggleListeners() {
-        val toggleListener = { toggle: MaterialSwitch, musicName: String ->
+        val toggleListener = { toggle: EinkSwitch, musicName: String ->
             if (toggle.isChecked) {
                 // Uncheck other toggles
                 brownNoiseToggle.isChecked = toggle == brownNoiseToggle

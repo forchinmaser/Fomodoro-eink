@@ -481,7 +481,7 @@
                             android:textColor="@color/black"
                             android:textSize="18sp" />
 
-                        <com.google.android.material.materialswitch.MaterialSwitch
+                        <com.arijit.pomodoro.widgets.EinkSwitch
                             android:id="@+id/auto_start_toggle"
                             android:layout_width="wrap_content"
                             android:layout_height="15dp"
@@ -566,7 +566,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/dark_mode_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -606,7 +606,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/amoled_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -645,7 +645,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/keep_screen_awake_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -684,7 +684,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/haptic_feedback_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -723,7 +723,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/ultra_focus_mode_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -761,7 +761,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/clock_sound_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -832,7 +832,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/brown_noise_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -871,7 +871,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/white_noise_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -910,7 +910,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/rainfall_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
@@ -949,7 +949,7 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.google.android.material.materialswitch.MaterialSwitch
+                    <com.arijit.pomodoro.widgets.EinkSwitch
                         android:id="@+id/light_jazz_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="15dp"
