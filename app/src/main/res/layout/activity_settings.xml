@@ -483,7 +483,7 @@
                             android:layout_alignParentEnd="true"
                             app:thumbTint="@color/switch_thumb_tint"
                             app:trackTint="@color/switch_track_tint"
-                            app:trackDecorationTint="@color/medium_red"
+                            app:trackDecorationTint="@color/black"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </RelativeLayout>
@@ -568,7 +568,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -608,7 +608,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -647,7 +647,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -686,7 +686,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -725,7 +725,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -763,7 +763,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -834,7 +834,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -873,7 +873,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -912,7 +912,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -951,7 +951,7 @@
                         android:layout_alignParentEnd="true"
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/medium_red"
+                        app:trackDecorationTint="@color/black"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
