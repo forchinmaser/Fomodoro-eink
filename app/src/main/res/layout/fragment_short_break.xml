@@ -78,54 +78,24 @@
                 android:visibility="gone" />
 
             <!-- PLAY BUTTON -->
-            <androidx.cardview.widget.CardView
+            <ImageView
                 android:id="@+id/play_btn"
-                android:layout_width="100dp"
-                android:layout_height="80dp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:layout_marginHorizontal="10dp"
-                android:visibility="visible"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/medium_green"
-                    android:gravity="center"
-                    android:padding="20dp">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/play_green" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
+                android:contentDescription="play"
+                android:src="@drawable/ic_play"
+                android:visibility="visible" />
 
             <!-- PAUSE BUTTON -->
-            <androidx.cardview.widget.CardView
+            <ImageView
                 android:id="@+id/pause_btn"
-                android:layout_width="100dp"
-                android:layout_height="80dp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:layout_marginHorizontal="10dp"
-                android:visibility="gone"
-                app:cardCornerRadius="20dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/medium_green"
-                    android:gravity="center"
-                    android:padding="20dp">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/pause_green" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
+                android:contentDescription="pause"
+                android:src="@drawable/ic_pause"
+                android:visibility="gone" />
 
             <!-- SKIP BUTTON -->
             <ImageView

@@ -38,8 +38,8 @@ import com.arijit.pomodoro.utils.StatsManager
 class TimerFragment : Fragment() {
     private lateinit var focusCard: CardView
     private lateinit var timerTxt: TextView
-    private lateinit var playBtn: CardView
-    private lateinit var pauseBtn: CardView
+    private lateinit var playBtn: View
+    private lateinit var pauseBtn: View
     private lateinit var resetBtn: ImageView
     private lateinit var skipBtn: ImageView
     private lateinit var brain: ImageView

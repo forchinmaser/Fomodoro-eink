@@ -18,7 +18,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.annotation.RequiresPermission
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import com.arijit.pomodoro.R
 import android.app.NotificationManager
@@ -28,8 +27,8 @@ import android.content.Intent
 class LongBreakFragment : Fragment() {
     private lateinit var backToTimer: TextView
     private lateinit var timerTxt: TextView
-    private lateinit var playBtn: CardView
-    private lateinit var pauseBtn: CardView
+    private lateinit var playBtn: View
+    private lateinit var pauseBtn: View
     private lateinit var resetBtn: ImageView
     private lateinit var skipBtn: ImageView
     private lateinit var coffee: ImageView
