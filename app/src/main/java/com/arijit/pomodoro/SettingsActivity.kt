@@ -25,7 +25,6 @@ import android.app.NotificationManager
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Environment
-import androidx.cardview.widget.CardView
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import kotlinx.coroutines.CoroutineScope
@@ -62,8 +61,8 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var clockSoundToggle: EinkSwitch
     private lateinit var amoledToggle: EinkSwitch
     private lateinit var sharedPreferences: SharedPreferences
-    private lateinit var githubCard: androidx.cardview.widget.CardView
-    private lateinit var supportCard: androidx.cardview.widget.CardView
+    private lateinit var githubCard: View
+    private lateinit var supportCard: View
     private lateinit var settingsTxt: TextView
     private lateinit var uiSettingsTxt: TextView
     private lateinit var aboutTheAppTxt: TextView
@@ -75,7 +74,7 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var musicValueTxt: TextView
     private lateinit var keepScreenAwakeToggle: EinkSwitch
     private lateinit var hapticFeedbackToggle: EinkSwitch
-    private lateinit var statsCard: CardView
+    private lateinit var statsCard: View
     private val CHANNEL_ID = "download_channel"
     private val NOTIFICATION_ID = 1
     private var wakeLock: android.os.PowerManager.WakeLock? = null
