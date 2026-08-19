@@ -494,7 +494,6 @@
                             app:thumbTint="@color/switch_thumb_tint"
                             app:trackTint="@color/switch_track_tint"
                             app:trackDecorationTint="@color/medium_red"
-                            app:trackDecorationWidth="2dp"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </RelativeLayout>
@@ -580,7 +579,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -621,7 +619,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -661,7 +658,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -701,7 +697,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -741,7 +736,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -780,7 +774,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -852,7 +845,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -892,7 +884,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -932,7 +923,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
@@ -972,7 +962,6 @@
                         app:thumbTint="@color/switch_thumb_tint"
                         app:trackTint="@color/switch_track_tint"
                         app:trackDecorationTint="@color/medium_red"
-                        app:trackDecorationWidth="2dp"
                         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                 </RelativeLayout>
