@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:fontFamily="@font/montserrat_bold"
+                android:fontFamily="@font/lato_bold"
                 android:text="Settings"
                 android:textColor="@color/black"
                 android:textSize="28sp" />
@@ -76,7 +76,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_bold"
+                                android:fontFamily="@font/lato_bold"
                                 android:text="Focused Time"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
@@ -88,7 +88,7 @@
                                 android:layout_toStartOf="@id/mins_txt"
                                 android:layout_centerVertical="true"
                                 android:background="@android:color/transparent"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:gravity="end"
                                 android:inputType="number"
                                 android:maxLines="1"
@@ -103,7 +103,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:text=" mins"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
@@ -153,7 +153,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_bold"
+                                android:fontFamily="@font/lato_bold"
                                 android:text="Short Break"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
@@ -164,7 +164,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_toStartOf="@id/mins_txt_sb"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:text="5"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
@@ -180,7 +180,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:text=" mins"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
@@ -230,7 +230,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_bold"
+                                android:fontFamily="@font/lato_bold"
                                 android:text="Long Break"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
@@ -241,7 +241,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_toStartOf="@id/mins_txt_lb"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:text="10"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
@@ -257,7 +257,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:text=" mins"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
@@ -307,7 +307,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_bold"
+                                android:fontFamily="@font/lato_bold"
                                 android:text="Sessions"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
@@ -318,7 +318,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_toStartOf="@id/sess_txt"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:text="4"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
@@ -334,7 +334,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:text=" sessions"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
@@ -384,7 +384,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_bold"
+                                android:fontFamily="@font/lato_bold"
                                 android:text="Alarm"
                                 android:textColor="@color/black"
                                 android:textSize="18sp" />
@@ -395,7 +395,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_toStartOf="@id/times_txt"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:text="3"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
@@ -411,7 +411,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
-                                android:fontFamily="@font/montserrat_regular"
+                                android:fontFamily="@font/lato_regular"
                                 android:text=" times"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
@@ -456,7 +456,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
-                            android:fontFamily="@font/montserrat_bold"
+                            android:fontFamily="@font/lato_bold"
                             android:text="Auto start sessions"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
@@ -487,7 +487,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="22dp"
-                android:fontFamily="@font/montserrat_regular"
+                android:fontFamily="@font/lato_regular"
                 android:text="Timer and UI Settings are hidden during an ongoing pomodoro session. Pause the current timer to change the settings. It will reset the timer"
                 android:textColor="@color/black"
                 android:visibility="gone" />
@@ -502,7 +502,7 @@
             android:layout_below="@id/timer_settings_placeholder"
             android:layout_marginStart="22dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/montserrat_regular"
+            android:fontFamily="@font/lato_regular"
             android:text="UI settings"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -540,7 +540,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="Dark mode"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -579,7 +579,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="Amoled"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -617,7 +617,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="Keep screen awake"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -655,7 +655,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="Haptic feedback"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -693,7 +693,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="Ultra focus mode"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -730,7 +730,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="Clock sound"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -763,7 +763,7 @@
             android:layout_below="@id/ui_settings_components"
             android:layout_marginStart="22dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/montserrat_regular"
+            android:fontFamily="@font/lato_regular"
             android:text="Background Music"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -800,7 +800,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="Brown Noise"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -838,7 +838,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="White Noise"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -876,7 +876,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="Rainfall"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -914,7 +914,7 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:text="Light jazz"
                         android:textColor="@color/black"
                         android:textSize="18sp" />
@@ -947,7 +947,7 @@
             android:layout_below="@id/background_music_components"
             android:layout_marginStart="22dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/montserrat_regular"
+            android:fontFamily="@font/lato_regular"
             android:text="Stats"
             android:textColor="@color/black"
             android:textSize="16sp" />
@@ -973,7 +973,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_centerVertical="true"
-                    android:fontFamily="@font/montserrat_bold"
+                    android:fontFamily="@font/lato_bold"
                     android:text="Check your stats"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -996,7 +996,7 @@
             android:layout_below="@id/stats_card"
             android:layout_marginStart="22dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/montserrat_regular"
+            android:fontFamily="@font/lato_regular"
             android:text="About the app"
             android:textColor="@color/black"
             android:textSize="16sp" />
@@ -1050,7 +1050,7 @@
                         android:id="@+id/gr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:includeFontPadding="false"
                         android:text="Github Repository"
                         android:textColor="@color/black"
@@ -1060,7 +1060,7 @@
                         android:id="@+id/ri"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:fontFamily="@font/lato_regular"
                         android:text="Report issues or star the project"
                         android:textColor="@color/black"
                         android:textSize="13sp" />
@@ -1119,7 +1119,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_bold"
+                        android:fontFamily="@font/lato_bold"
                         android:includeFontPadding="false"
                         android:text="Buy me a Coffee"
                         android:textColor="@color/black"
@@ -1128,7 +1128,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:fontFamily="@font/lato_regular"
                         android:text="Help me keep building free and open source applications."
                         android:textColor="@color/black"
                         android:textSize="13sp" />
@@ -1147,7 +1147,7 @@
             android:layout_below="@id/support_card"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:fontFamily="@font/montserrat_regular"
+            android:fontFamily="@font/lato_regular"
             android:text="Made with ❤️ by Arijit"
             android:textColor="@color/black"
             android:textSize="13sp" />

@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_toEndOf="@id/back_btn"
-                android:fontFamily="@font/montserrat_bold"
+                android:fontFamily="@font/lato_bold"
                 android:text="Your Stats"
                 android:textColor="@color/deep_red"
                 android:textSize="37sp" />
@@ -61,7 +61,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_regular"
+                    android:fontFamily="@font/lato_regular"
                     android:includeFontPadding="false"
                     android:text="Total focus time"
                     android:textColor="@color/light_red"
@@ -83,7 +83,7 @@
                             android:id="@+id/hrs_txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat_bold"
+                            android:fontFamily="@font/lato_bold"
                             android:text="240"
                             android:textColor="@color/light_red"
                             android:textSize="35sp" />
@@ -92,7 +92,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:fontFamily="@font/montserrat_bold"
+                            android:fontFamily="@font/lato_bold"
                             android:text="hrs"
                             android:textColor="@color/light_red"
                             android:textSize="22sp" />
@@ -110,7 +110,7 @@
                             android:id="@+id/mins_txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat_bold"
+                            android:fontFamily="@font/lato_bold"
                             android:text="35"
                             android:textColor="@color/light_red"
                             android:textSize="35sp" />
@@ -119,7 +119,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:fontFamily="@font/montserrat_bold"
+                            android:fontFamily="@font/lato_bold"
                             android:text="mins"
                             android:textColor="@color/light_red"
                             android:textSize="22sp" />
@@ -140,7 +140,7 @@
             android:layout_below="@id/total_focus_time_card"
             android:layout_marginStart="28dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/montserrat_regular"
+            android:fontFamily="@font/lato_regular"
             android:letterSpacing="0.1"
             android:text="YOUR STREAK"
             android:textColor="@color/deep_red" />
@@ -174,7 +174,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:fontFamily="@font/lato_regular"
                         android:includeFontPadding="false"
                         android:text="Longest"
                         android:textColor="@color/deep_red"
@@ -189,7 +189,7 @@
                             android:id="@+id/longest_streak_txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat_bold"
+                            android:fontFamily="@font/lato_bold"
                             android:text="14"
                             android:textColor="@color/deep_red"
                             android:textSize="35sp" />
@@ -198,7 +198,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:fontFamily="@font/montserrat_bold"
+                            android:fontFamily="@font/lato_bold"
                             android:text="days"
                             android:textColor="@color/deep_red"
                             android:textSize="22sp" />
@@ -227,7 +227,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:fontFamily="@font/lato_regular"
                         android:includeFontPadding="false"
                         android:text="Current"
                         android:textColor="@color/deep_red"
@@ -242,7 +242,7 @@
                             android:id="@+id/current_streak_txt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/montserrat_bold"
+                            android:fontFamily="@font/lato_bold"
                             android:text="3"
                             android:textColor="@color/deep_red"
                             android:textSize="35sp" />
@@ -251,7 +251,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
-                            android:fontFamily="@font/montserrat_bold"
+                            android:fontFamily="@font/lato_bold"
                             android:text="days"
                             android:textColor="@color/deep_red"
                             android:textSize="22sp" />
@@ -272,7 +272,7 @@
             android:layout_below="@id/streak_cards_layout"
             android:layout_marginStart="28dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/montserrat_regular"
+            android:fontFamily="@font/lato_regular"
             android:letterSpacing="0.1"
             android:text="PROGRESS"
             android:textColor="@color/deep_red" />
@@ -310,7 +310,7 @@
                         android:id="@+id/today_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:fontFamily="@font/lato_regular"
                         android:text="Today"
                         android:textColor="@color/alt_light_red"
                         android:textSize="16sp" />
@@ -341,7 +341,7 @@
                         android:id="@+id/month_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/montserrat_regular"
+                        android:fontFamily="@font/lato_regular"
                         android:text="This week"
                         android:textColor="@color/deep_red"
                         android:textSize="16sp" />
@@ -383,7 +383,7 @@
             android:layout_below="@id/chart_container"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="50dp"
-            android:fontFamily="@font/montserrat_italic"
+            android:fontFamily="@font/lato_italic"
             android:gravity="center"
             android:text="🌱 Consistency is your superpower. You're building momentum one session at a time"
             android:textColor="@color/deep_red"
