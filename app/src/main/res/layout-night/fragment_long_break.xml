@@ -50,28 +50,16 @@
 
         </androidx.cardview.widget.CardView>
 
-        <!-- MIN TXT -->
+        <!-- TIMER TXT -->
         <TextView
-            android:id="@+id/min_txt"
+            android:id="@+id/timer_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_regular"
             android:includeFontPadding="false"
-            android:text="24"
+            android:text="24:59"
             android:textColor="@color/light_blue"
-            android:textSize="150sp" />
-
-        <!-- SEC TXT -->
-        <TextView
-            android:id="@+id/sec_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-80dp"
-            android:fontFamily="@font/lato_regular"
-            android:includeFontPadding="false"
-            android:text="59"
-            android:textColor="@color/light_blue"
-            android:textSize="150sp" />
+            android:textSize="144sp" />
 
         <!-- BUTTONS -->
         <LinearLayout

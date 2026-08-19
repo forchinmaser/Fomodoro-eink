@@ -68,37 +68,16 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <!-- MIN TXT -->
+            <!-- TIMER TXT -->
             <TextView
-                android:id="@+id/min_txt"
+                android:id="@+id/timer_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/lato_regular"
                 android:includeFontPadding="false"
-                android:text="24"
+                android:text="24:59"
                 android:textColor="@color/deep_red"
-                android:textSize="130sp" />
-
-            <!-- : -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lato_regular"
-                android:includeFontPadding="false"
-                android:text=":"
-                android:textColor="@color/deep_red"
-                android:textSize="130sp" />
-
-            <!-- SEC TXT -->
-            <TextView
-                android:id="@+id/sec_txt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lato_regular"
-                android:includeFontPadding="false"
-                android:text="59"
-                android:textColor="@color/deep_red"
-                android:textSize="130sp" />
+                android:textSize="124sp" />
 
         </LinearLayout>
 

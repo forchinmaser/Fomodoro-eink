@@ -37,8 +37,7 @@ import com.arijit.pomodoro.utils.StatsManager
 
 class TimerFragment : Fragment() {
     private lateinit var focusCard: CardView
-    private lateinit var minTxt: TextView
-    private lateinit var secTxt: TextView
+    private lateinit var timerTxt: TextView
     private lateinit var playBtn: CardView
     private lateinit var pauseBtn: CardView
     private lateinit var resetBtn: ImageView
@@ -108,8 +107,7 @@ class TimerFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_timer, container, false)
         focusCard = view.findViewById(R.id.focus_card)
-        minTxt = view.findViewById(R.id.min_txt)
-        secTxt = view.findViewById(R.id.sec_txt)
+        timerTxt = view.findViewById(R.id.timer_txt)
         playBtn = view.findViewById(R.id.play_btn)
         pauseBtn = view.findViewById(R.id.pause_btn)
         resetBtn = view.findViewById(R.id.reset_btn)
@@ -338,8 +336,7 @@ class TimerFragment : Fragment() {
         val minutes = (timeLeftInMillis / 1000).toInt() / 60
         val seconds = (timeLeftInMillis / 1000).toInt() % 60
         
-        minTxt.text = String.format("%02d", minutes)
-        secTxt.text = String.format("%02d", seconds)
+        timerTxt.text = String.format("%02d:%02d", minutes, seconds)
     }
 
     private fun updateSessionsText() {
