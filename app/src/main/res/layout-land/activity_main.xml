@@ -7,47 +7,63 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- SETTINGS BUTTON -->
-    <ImageView
-        android:id="@+id/settings_btn"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/settings"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="15dp" />
+    <!-- TOP BAR -->
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="15dp">
 
-    <!-- MUSIC BUTTON -->
-    <ImageView
-        android:id="@+id/music_btn"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/music_black"
-        android:layout_alignParentStart="true"
-        android:visibility="visible"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp" />
+        <!-- MUSIC BUTTON -->
+        <ImageView
+            android:id="@+id/music_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="ambient music button"
+            android:src="@drawable/music_black"
+            android:visibility="visible" />
 
-    <!-- MUSIC ANIMATED BUTTON -->
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:lottie_rawRes="@raw/music_anim"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:visibility="gone"
-        android:id="@+id/music_animated_btn"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp" />
+        <!-- MUSIC ANIMATED BUTTON -->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/music_animated_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            app:lottie_rawRes="@raw/music_anim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:contentDescription="ambient music button"
+            android:visibility="gone" />
+
+        <!-- SETTINGS BUTTON -->
+        <ImageView
+            android:id="@+id/settings_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="settings button"
+            android:src="@drawable/settings" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/top_bar_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/top_bar"
+        android:background="@color/black" />
 
     <!-- CONTAINER -->
     <FrameLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_bar_divider" />
 
     <TextView
         android:id="@+id/sessions_txt"
