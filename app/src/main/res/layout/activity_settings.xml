@@ -417,16 +417,14 @@
                         android:textColor="@color/black"
                         android:textSize="18sp" />
 
-                    <com.arijit.pomodoro.widgets.EinkSwitch
+                    <com.arijit.pomodoro.widgets.EinkToggle
                         android:id="@+id/auto_start_toggle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
                         android:layout_centerVertical="true"
-                        app:thumbTint="@color/switch_thumb_tint"
-                        app:trackTint="@color/switch_track_tint"
-                        app:trackDecorationTint="@color/black"
-                        tools:ignore="UseSwitchCompatOrMaterialXml" />
+                        app:inkColor="@color/black"
+                        app:surfaceColor="@color/white" />
 
                 </RelativeLayout>
 
@@ -498,16 +496,14 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
-                <com.arijit.pomodoro.widgets.EinkSwitch
+                <com.arijit.pomodoro.widgets.EinkToggle
                     android:id="@+id/dark_mode_toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    app:thumbTint="@color/switch_thumb_tint"
-                    app:trackTint="@color/switch_track_tint"
-                    app:trackDecorationTint="@color/black"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    app:inkColor="@color/black"
+                    app:surfaceColor="@color/white" />
 
             </RelativeLayout>
 
@@ -527,16 +523,14 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
-                <com.arijit.pomodoro.widgets.EinkSwitch
+                <com.arijit.pomodoro.widgets.EinkToggle
                     android:id="@+id/amoled_toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    app:thumbTint="@color/switch_thumb_tint"
-                    app:trackTint="@color/switch_track_tint"
-                    app:trackDecorationTint="@color/black"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    app:inkColor="@color/black"
+                    app:surfaceColor="@color/white" />
 
             </RelativeLayout>
 
@@ -556,16 +550,14 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
-                <com.arijit.pomodoro.widgets.EinkSwitch
+                <com.arijit.pomodoro.widgets.EinkToggle
                     android:id="@+id/keep_screen_awake_toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    app:thumbTint="@color/switch_thumb_tint"
-                    app:trackTint="@color/switch_track_tint"
-                    app:trackDecorationTint="@color/black"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    app:inkColor="@color/black"
+                    app:surfaceColor="@color/white" />
 
             </RelativeLayout>
 
@@ -585,16 +577,14 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
-                <com.arijit.pomodoro.widgets.EinkSwitch
+                <com.arijit.pomodoro.widgets.EinkToggle
                     android:id="@+id/haptic_feedback_toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    app:thumbTint="@color/switch_thumb_tint"
-                    app:trackTint="@color/switch_track_tint"
-                    app:trackDecorationTint="@color/black"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    app:inkColor="@color/black"
+                    app:surfaceColor="@color/white" />
 
             </RelativeLayout>
 
@@ -614,16 +604,14 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
-                <com.arijit.pomodoro.widgets.EinkSwitch
+                <com.arijit.pomodoro.widgets.EinkToggle
                     android:id="@+id/ultra_focus_mode_toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    app:thumbTint="@color/switch_thumb_tint"
-                    app:trackTint="@color/switch_track_tint"
-                    app:trackDecorationTint="@color/black"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    app:inkColor="@color/black"
+                    app:surfaceColor="@color/white" />
 
             </RelativeLayout>
 
@@ -643,16 +631,14 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
-                <com.arijit.pomodoro.widgets.EinkSwitch
+                <com.arijit.pomodoro.widgets.EinkToggle
                     android:id="@+id/clock_sound_toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    app:thumbTint="@color/switch_thumb_tint"
-                    app:trackTint="@color/switch_track_tint"
-                    app:trackDecorationTint="@color/black"
-                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+                    app:inkColor="@color/black"
+                    app:surfaceColor="@color/white" />
 
             </RelativeLayout>
 

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EinkToggle">
+        <attr name="inkColor" format="color" />
+        <attr name="surfaceColor" format="color" />
+    </declare-styleable>
+</resources>

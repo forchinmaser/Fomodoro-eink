@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.arijit.pomodoro.widgets.EinkSwitch
+import com.arijit.pomodoro.widgets.EinkToggle
 import android.content.res.Configuration
 import androidx.activity.result.contract.ActivityResultContracts
 import android.app.NotificationChannel
@@ -56,10 +56,10 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var alarmValueTxt: TextView
     private lateinit var alarmMinusBtn: View
     private lateinit var alarmPlusBtn: View
-    private lateinit var autoStartSessions: EinkSwitch
-    private lateinit var darkModeToggle: EinkSwitch
-    private lateinit var clockSoundToggle: EinkSwitch
-    private lateinit var amoledToggle: EinkSwitch
+    private lateinit var autoStartSessions: EinkToggle
+    private lateinit var darkModeToggle: EinkToggle
+    private lateinit var clockSoundToggle: EinkToggle
+    private lateinit var amoledToggle: EinkToggle
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var githubCard: View
     private lateinit var supportCard: View
@@ -72,13 +72,13 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var timerSettingsComponents: LinearLayout
     private lateinit var musicRow: View
     private lateinit var musicValueTxt: TextView
-    private lateinit var keepScreenAwakeToggle: EinkSwitch
-    private lateinit var hapticFeedbackToggle: EinkSwitch
+    private lateinit var keepScreenAwakeToggle: EinkToggle
+    private lateinit var hapticFeedbackToggle: EinkToggle
     private lateinit var statsCard: View
     private val CHANNEL_ID = "download_channel"
     private val NOTIFICATION_ID = 1
     private var wakeLock: android.os.PowerManager.WakeLock? = null
-    private lateinit var ultraFocusModeToggle: EinkSwitch
+    private lateinit var ultraFocusModeToggle: EinkToggle
     private var originalOrientation: Int = 0
     private var originalDndMode: Int = 0
     private lateinit var notificationManager: NotificationManager
