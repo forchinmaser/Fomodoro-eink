@@ -18,6 +18,7 @@
             android:id="@+id/focus_card"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             app:cardCornerRadius="50dp">
 
             <LinearLayout
