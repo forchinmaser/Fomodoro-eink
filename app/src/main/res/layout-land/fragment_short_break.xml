@@ -78,7 +78,7 @@
                 android:includeFontPadding="false"
                 android:text="24:59"
                 android:textColor="@color/deep_green"
-                android:textSize="124sp" />
+                android:textSize="109sp" />
 
         </LinearLayout>
 

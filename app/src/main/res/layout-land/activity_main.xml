@@ -49,6 +49,16 @@
             android:contentDescription="settings button"
             android:src="@drawable/settings" />
 
+        <!-- APP TITLE -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/lato_bold"
+            android:text="Fomodoro"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
     </RelativeLayout>
 
     <View

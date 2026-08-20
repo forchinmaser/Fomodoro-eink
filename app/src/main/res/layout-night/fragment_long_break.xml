@@ -59,7 +59,7 @@
             android:includeFontPadding="false"
             android:text="24:59"
             android:textColor="@color/light_blue"
-            android:textSize="144sp" />
+            android:textSize="129sp" />
 
         <!-- BUTTONS -->
         <LinearLayout
